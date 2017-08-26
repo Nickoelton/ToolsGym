@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
    $para = 'nickoelton@outlook.com';
 
    //Creamos cabecera.
-   $headers = 'ToolsGym' . "nickoelton@outlook.com" . $email . "\r\n";
+   $headers = 'From: ' . "nickoelton@outlook.com" . $email . "\r\n";
    $headers .= "Content-type: text/html; charset=utf-8";
 
    //Componemos cuerpo correo.
@@ -29,7 +29,9 @@ if (isset($_POST['submit'])) {
          alert('Mensaje enviado, muchas gracias.');
       </script>";
  } else {
-
+      echo "<script language='javascript'>
+         alert('fallado');
+      </script>";
  }
 }
 ?>
