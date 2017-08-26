@@ -29,9 +29,7 @@ if (isset($_POST['submit'])) {
          alert('Mensaje enviado, muchas gracias.');
       </script>";
  } else {
-      echo "<script language='javascript'>
-         alert('fallado');
-      </script>";
+
  }
 }
 ?>
