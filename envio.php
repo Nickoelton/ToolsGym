@@ -1,19 +1,37 @@
-
 <?php
+//Reseteamos variables a 0.
+$nombre = $email = $subject = $mensaje = $para = $headers = $msjCorreo = NULL;
 
-//levanto las los datos a traves de variables
-$nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$telefono = $_POST['telefono'];
-$email = $_POST['email'];
-$mensaje = $_POST['mensaje'];
-$provincia = $_POST['provincia'];
-$ciudad = $_POST['ciudad'];
+if (isset($_POST['submit'])) {
+   //Obtenemos valores input formulario
+   $nombre = $_POST['nombre'];
+   $email = $_POST['email'];
+   $subject = $_POST['subject'];   
+   $mensaje = $_POST['mensaje'];
+   $para = 'nickoelton@outlook.com';
 
-// armo el mail con la info levantada
-mail('nickoelton@outlook.com', 'Solicitud web', "Envia: $nombre $apellido \r\n Ciudad: $ciudad \r\n Provincia: $provincia \r\n Telefono: $telefono \r\n E-mail: $email \r\n Mensaje: $mensaje", "From: $email \r\n Bounce-to: tu_correo@tudominio.com");
-   
-// Una vez que se envia, vuelvo al formulario ancunciando que los datos se enviaron
-echo "<script>history.back(alert(\"Enviado correctamente!\"));</script>"; 
+   //Creamos cabecera.
+   $headers = 'From' . " " . $email . "\r\n";
+   $headers .= "Content-type: text/html; charset=utf-8";
 
+   //Componemos cuerpo correo.
+   $msjCorreo = "Nombre: " . $nombre;
+   $msjCorreo .= "\r\n";
+   $msjCorreo .= "Email: " . $email;
+   $msjCorreo .= "\r\n";
+   $msjCorreo .= "Asunto: " . $subject;
+   $msjCorreo .= "\r\n";
+   $msjCorreo .= "Mensaje: " . $mensaje;
+   $msjCorreo .= "\r\n";
+
+ if (mail($para, $subject, $msjCorreo, $headers)) {
+      echo "<script language='javascript'>
+         alert('Mensaje enviado, muchas gracias.');
+      </script>";
+ } else {
+      echo "<script language='javascript'>
+         alert('fallado');
+      </script>";
+ }
+}
 ?>
