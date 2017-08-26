@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
    $para = 'nickoelton@outlook.com';
 
    //Creamos cabecera.
-   $headers = 'From: ' . "nickoelton@outlook.com" . $email . "\r\n";
+   $headers = ' From: Nombre de Titulo <$_POST['$email']> ' . "\r\n" . 
    $headers .= "Content-type: text/html; charset=utf-8";
 
    //Componemos cuerpo correo.
