@@ -82,7 +82,7 @@ if(isset($_POST['email'])) {
  
   }
  
-  if(strlen($error_message) > 0) {
+  if(strlen($error_message) < 0) {
  
     died($error_message);
  
