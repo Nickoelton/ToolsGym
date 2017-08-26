@@ -48,7 +48,7 @@ if(isset($_POST['email'])) {
 
     $message = $_POST['message']; // requerido
  
-    $error_message = "Error";
+    $error = "";
 
 //En esta parte se verifica que la dirección de correo sea válida 
     
@@ -76,11 +76,12 @@ if(isset($_POST['email'])) {
  
   }
  
-  if(strlen($message) < 2) {
- 
-    $error_message .= 'El formato del texto no es válido.<br />';
- 
-  }
+  if(strlen($message) > 2) {
+    
+    $error_message .= 'El formato del texto no es válido.
+    ';
+    
+    }
  
   if(strlen($error_message) < 0) {
  
