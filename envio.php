@@ -4,7 +4,7 @@ if(isset($_POST['email'])) {
 
  $url = 'https://api.sendgrid.com/';
  $user = 'azure_91d234cb4c2c58734ea5fc3d83d6f0a0@azure.com';
- $pass = 'qwerty@123';
+ $pass = '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';
 
  $params = array(
       'api_user' => $user,
