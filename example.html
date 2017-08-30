@@ -1,57 +1,27 @@
-<h3>Inside the form:</h3>
-
-<form id="contact_form" method="post">
-    <label>Name:</label>
-    <input type="text" id="name" name="name" value="John" />
-    <br>
-    <label>Email:</label>
-    <input type="email" id="email" name="email" value="nickoelton@outlook.com" />
-    <br>
-    <input type="submit" id="submit1" value="SEND" />
-</form>
-
-<h3>Elements outside the form:</h3>
-
-
-<h4>Text field</h4>
-
-<input name="user" id="user" form="contact_form" value="Admin">
-<br>
-<textarea name="comment" id="comments" form="contact_form">Here is the comment</textarea>
-
-<h4>Radio buttons</h4>
-
-<input type="radio" name="radio" value="radio1" checked="checked" id="r1" form="contact_form">
-<label for="r1">radio1</label>
-<input type="radio" name="radio" value="radio2" id="r2" form="contact_form">
-<label for="r2">radio2</label>
-
-<h4>List</h4>
-
-<select name="single" form="contact_form">
-    <option>Single</option>
-    <option>Single2</option>
-    <option selected="selected">Default</option>
-</select>
-<br>
-<select name="multiple" multiple="multiple" form="contact_form">
-    <option selected="selected">Multiple</option>
-    <option>Multiple2</option>
-    <option selected="selected">Multiple3</option>
-</select>
-<br>
-
-<h3>Check boxes</h3>
-
-
-<h4>Checkbox</h4>
-
-<input type="checkbox" name="check" value="check1" id="ch1" form="contact_form">
-<label for="ch1">check1</label>
-<input type="checkbox" name="check" value="check2" checked="checked" id="ch2" form="contact_form">
-<label for="ch2">check2</label>
-
-<h4>Form action</h4>
-
-<input type="submit" id="submit2" name="test1" value="SEND2" form="contact_form" />
-<input type="reset" value="RESET" form="contact_form" />
+<html> 
+    <head> 
+    <title>Formulario de Contacto</title> 
+    </head> 
+    <body> 
+    <form id="form1" name="form1" method="post" action="enviar.php"> 
+    <p>Nombre:<br /> 
+    <label> 
+    <input name="nombre" type="text" id="nombre" /> 
+    </label> 
+    <br /> 
+    Telefono:<br /> 
+    <input name="telefono" type="text" id="telefono" /> 
+    <br /> 
+    Email:<br /> 
+    <input name="email" type="text" id="email" /> 
+    <br /> 
+    Mensaje:<br /> 
+    <textarea name="mensaje" id="mensaje"></textarea> 
+    <br /> 
+    <label> 
+    <input type="submit" name="Submit" value="Enviar Formulario" /> 
+    </label> 
+    </p> 
+    </form> 
+    </body> 
+</html> 
